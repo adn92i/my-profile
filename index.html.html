@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrien Laurent | Excellence Commerciale & Vente</title>
+    
+    <!-- Polices de caractère Prestige -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- CONFIGURATION LUXE ÉPURÉ (BLANC & BLEU) --- */
+        :root {
+            --bg-main: #ffffff;
+            --bg-secondary: #f4f7fb;
+            --blue-prestige: #002d5a; /* Bleu Audencia / Luxe */
+            --blue-light: #0056b3;
+            --blue-gradient: linear-gradient(135deg, #002d5a, #0056b3);
+            --text-dark: #1a1a1a;
+            --text-soft: #4a4a4a;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* --- TRACE DE FOND DISCRÈTE --- */
+        .pattern-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 2px 2px, #002d5a0a 1px, transparent 0);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--blue-prestige);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-decoration: none;
+        }
+
+        .btn-contact {
+            border: 1px solid var(--blue-prestige);
+            padding: 10px 25px;
+            color: var(--blue-prestige);
+            text-decoration: none;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+        }
+
+        .btn-contact:hover {
+            background: var(--blue-prestige);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 45, 90, 0.2);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--blue-prestige);
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 4px;
+            color: var(--blue-prestige);
+        }
+
+        .blue-text {
+            color: var(--blue-light);
+        }
+
+        .subtitle {
+            letter-spacing: 3px;
+            font-weight: 400;
+            color: var(--text-soft);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .objective {
+            margin-top: 15px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--blue-prestige);
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            color: var(--blue-prestige);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section-title::before, .section-title::after {
+            content: "";
+            width: 50px;
+            height: 1px;
+            background: var(--blue-prestige);
+            opacity: 0.3;
+        }
+
+        /* --- CARTES EXPÉRIENCES --- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+
+        .card:hover {
+            border-color: var(--blue-light);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            color: var(--blue-prestige);
+            font-family: 'Cinzel', serif;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .card-sub {
+            color: var(--blue-light);
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-desc {
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .card-highlight {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--blue-prestige);
+            display: block;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        /* --- SKILLS --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .skill-item {
+            padding: 10px 22px;
+            border: 1px solid #eee;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            color: var(--text-soft);
+            font-weight: 500;
+            background: #fff;
+        }
+
+        .skill-item:hover {
+            color: white;
+            border-color: var(--blue-prestige);
+            background-color: var(--blue-prestige);
+        }
+
+        /* --- LINKEDIN SECTION --- */
+        .linkedin-section {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--bg-secondary);
+            margin: 40px 0;
+        }
+
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--blue-prestige);
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--blue-prestige);
+            padding: 15px 35px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .linkedin-link:hover {
+            background: var(--blue-prestige);
+            color: white;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid #eee;
+            background-color: #fff;
+        }
+
+        .footer-email {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: var(--blue-prestige);
+            transition: var(--transition);
+            letter-spacing: 2px;
+        }
+
+        .footer-email:hover {
+            opacity: 0.7;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .card-grid { grid-template-columns: 1fr; }
+            .hero { padding: 40px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pattern-bg"></div>
+
+    <nav class="container">
+        <a href="#" class="logo">A. LAURENT</a>
+        <div class="nav-links">
+            <a href="mailto:adrien.laurent@audencia.com" class="btn-contact">Recruter</a>
+        </div>
+    </nav>
+
+    <header class="hero container">
+        <div class="profile-wrapper">
+            <!-- N'oublie pas de nommer ta photo "photo.jpg" dans le dossier -->
+            <img src="image/IMG_AD.PNG" alt="Adrien Laurent" class="profile-img" onerror="this.src='https://via.placeholder.com/180/002d5a/fff?text=AL'">
+        </div>
+        <h1>ADRIEN <span class="blue-text">LAURENT</span></h1>
+        <p class="subtitle">Audencia Business School • Bachelor in Management • 2ème Année</p>
+        <p class="objective">Alternance Commercial / Vente - Septembre 2026</p>
+    </header>
+
+    <main class="container">
+        
+        <section>
+            <h2 class="section-title">Parcours Professionnel</h2>
+            <div class="card-grid">
+                <!-- CNCC -->
+                <div class="card">
+                    <h3>Compagnie des Commissaires aux Comptes</h3>
+                    <p class="card-sub">Communication & Événementiel</p>
+                    <p class="card-desc">Coordination logistique des Assises Nationales (1 300 participants) et gestion institutionnelle via LinkedIn.</p>
+                    <span class="card-highlight"><i class="far fa-chart-bar"></i> Reporting Excel & Coordination</span>
+                </div>
+                <!-- BARCELONE -->
+                <div class="card">
+                    <h3>Club Andrés Gimeno (Espagne)</h3>
+                    <p class="card-sub">Assistant Community Manager</p>
+                    <p class="card-desc">Création de contenus viraux sur TikTok et Instagram pour le marché international.</p>
+                    <span class="card-highlight"><i class="fab fa-tiktok"></i> Record : +200 000 vues par vidéo</span>
+                </div>
+                <!-- VINTED / VENTE -->
+                <div class="card">
+                    <h3>Activité Commerciale Indépendante</h3>
+                    <p class="card-sub">E-commerce & Négociation (Vinted)</p>
+                    <p class="card-desc">Fixation stratégique des prix, échanges commerciaux et gestion complète de la relation client et des expéditions.</p>
+                    <span class="card-highlight"><i class="fas fa-handshake"></i> Stratégie commerciale & Vente</span>
+                </div>
+                <!-- RESTAURANT -->
+                <div class="card">
+                    <h3>Restaurant Janine</h3>
+                    <p class="card-sub">Commis de Cuisine</p>
+                    <p class="card-desc">Rigueur absolue et gestion du stress au sein d'un environnement gastronomique exigeant.</p>
+                    <span class="card-highlight"><i class="fas fa-check-circle"></i> Organisation & Discipline</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOUVELLE SECTION : ASSOCIATIF -->
+        <section>
+            <h2 class="section-title">Engagement Associatif</h2>
+            <div class="card-grid">
+                <!-- FIRDAOUS -->
+                <div class="card">
+                    <h3>Firdaous Charity</h3>
+                    <p class="card-sub">Bénévole (Depuis Octobre 2025)</p>
+                    <p class="card-desc">Participation active aux actions solidaires : animation d'activités, appui logistique lors d'événements et distribution.</p>
+                    <span class="card-highlight"><i class="fas fa-hands-helping"></i> Entraide & Logistique</span>
+                </div>
+                <!-- CUP SOLIDARITE -->
+                <div class="card">
+                    <h3>CUP Solidarité</h3>
+                    <p class="card-sub">Bénévole (Depuis Juin 2025)</p>
+                    <p class="card-desc">Participation aux maraudes hebdomadaires, distribution de repas et soutien social auprès des personnes en précarité.</p>
+                    <span class="card-highlight"><i class="fas fa-heart"></i> Engagement & Empathie</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="linkedin-section">
+            <h2 class="section-title">Connexion Réseau</h2>
+            <a href="https://www.linkedin.com/in/adrien-laurent-516857328" target="_blank" class="linkedin-link">
+                <i class="fab fa-linkedin-in"></i>
+                <span>Consulter mon parcours complet</span>
+            </a>
+        </section>
+
+        <section>
+            <h2 class="section-title">Compétences Clés</h2>
+            <div class="skills-container">
+                <div class="skill-item">Développement Commercial</div>
+                <div class="skill-item">Vente & Négociation</div>
+                <div class="skill-item">Relation Client</div>
+                <div class="skill-item">Pack Office</div>
+                <div class="skill-item">Marketing Digital</div>
+                <div class="skill-item">Anglais (B2)</div>
+                <div class="skill-item">Espagnol (B2)</div>
+                <div class="skill-item">Coordination Logistique</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; color: var(--text-soft); margin-bottom: 10px;">Contact</p>
+            <a href="mailto:adrien.laurent@audencia.com" class="footer-email">ADRIEN.LAURENT@AUDENCIA.COM</a>
+            <p style="margin-top: 25px; color: var(--blue-prestige); font-size: 1.1rem; font-weight: 600;">06 30 78 55 77</p>
+            <p style="margin-top: 40px; font-size: 0.7rem; letter-spacing: 3px; color: #999; font-weight: 400; text-transform: uppercase;">Paris • International</p>
+        </div>
+    </footer>
+
+</body>
+</html>
